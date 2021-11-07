@@ -1,6 +1,8 @@
 package com.company;
 import java.util.Scanner;
 
+import static java.lang.Math.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,9 +24,9 @@ public class Main {
         System.out.println("Enter coordinate y of dot C:");
         yc = sc.nextDouble();
 
-        AB = Math.sqrt(Math.pow(xa - xb, 2)+Math.pow(ya-yb,2));
-        BC = Math.sqrt(Math.pow(xb - xc, 2)+Math.pow(yb-yc,2));
-        AC = Math.sqrt(Math.pow(xa - xc, 2)+Math.pow(ya-yc,2));
+        AB = sqrt(pow(xa - xb, 2)+ pow(ya-yb,2));
+        BC = sqrt(pow(xb - xc, 2)+ pow(yb-yc,2));
+        AC = sqrt(pow(xa - xc, 2)+ pow(ya-yc,2));
 
         // Condition check over sides of triangle
         if (AB<0||AC<0||BC<0||(AB + AB <= BC)||(AC+BC<=AB)||(AB+BC<=AC))
@@ -52,25 +54,25 @@ public class Main {
         //classify angle
         double delta = 0.3;
         if(AB>AC&&AB>BC){   // when largest side is 'AB'
-            if(Math.pow(AB, 2) - (Math.pow(AC, 2) + Math.pow(BC, 2)) <= delta){
+            if(pow(AB, 2) - (pow(AC, 2) + pow(BC, 2)) <= delta){
                 System.out.println("Triangle IS 'Right'");
-            }else if(Math.pow(AB,2)<Math.pow(AC,2)+Math.pow(BC,2)){
+            }else if(pow(AB,2)< pow(AC,2)+ pow(BC,2)){
                 System.out.println("Triangle IS 'Acute'");
             }else {
                 System.out.println("Triangle IS 'Obtuse'");
             }
         }else if(BC>AB&&BC>AC) {    // when largest side is 'BC'
-            if (Math.pow(BC, 2) - (Math.pow(AB, 2) + Math.pow(AC, 2)) <= delta) {
+            if (pow(BC, 2) - (pow(AB, 2) + pow(AC, 2)) <= delta) {
                 System.out.println("Triangle IS 'Right'");
-            } else if (Math.pow(BC, 2) < Math.pow(AB, 2) + Math.pow(AC, 2)) {
+            } else if (pow(BC, 2) < pow(AB, 2) + pow(AC, 2)) {
                 System.out.println("Triangle IS 'Acute'");
             } else {
                 System.out.println("Triangle IS 'Obtuse'");
             }
         }else if(AC>AB&&AC>BC){     // when largest side is 'AC'
-            if(Math.pow(AC, 2) - (Math.pow(AB, 2) + Math.pow(BC, 2)) <= delta){
+            if(pow(AC, 2) - (pow(AB, 2) + pow(BC, 2)) <= delta){
                 System.out.println("Triangle IS 'Right'");
-            }else if(Math.pow(AC, 2) < Math.pow(AB, 2) + Math.pow(BC, 2)){
+            }else if(pow(AC, 2) < pow(AB, 2) + pow(BC, 2)){
                 System.out.println("Triangle IS 'Acute'");
             }else {
                 System.out.println("Triangle IS 'Obtuse'");
